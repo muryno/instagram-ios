@@ -17,6 +17,11 @@
 		C3B1DDA1272C48DF00E12C57 /* instagram_cloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B1DDA0272C48DF00E12C57 /* instagram_cloneUITests.swift */; };
 		C3B1DDA3272C48DF00E12C57 /* instagram_cloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B1DDA2272C48DF00E12C57 /* instagram_cloneUITestsLaunchTests.swift */; };
 		C3B1DDB8272C4AAD00E12C57 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B1DDB7272C4AAD00E12C57 /* MainViewController.swift */; };
+		C3B1DDFB272D537E00E12C57 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B1DDFA272D537E00E12C57 /* FeedController.swift */; };
+		C3B1DDFD272D539100E12C57 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B1DDFC272D539100E12C57 /* SearchController.swift */; };
+		C3B1DDFF272D53AC00E12C57 /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B1DDFE272D53AC00E12C57 /* ImageSelectorController.swift */; };
+		C3B1DE01272D53C800E12C57 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B1DE00272D53C800E12C57 /* NotificationController.swift */; };
+		C3B1DE03272D53E400E12C57 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B1DE02272D53E400E12C57 /* ProfileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		C3B1DDA0272C48DF00E12C57 /* instagram_cloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instagram_cloneUITests.swift; sourceTree = "<group>"; };
 		C3B1DDA2272C48DF00E12C57 /* instagram_cloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instagram_cloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C3B1DDB7272C4AAD00E12C57 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C3B1DDFA272D537E00E12C57 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		C3B1DDFC272D539100E12C57 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		C3B1DDFE272D53AC00E12C57 /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
+		C3B1DE00272D53C800E12C57 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		C3B1DE02272D53E400E12C57 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +170,11 @@
 			isa = PBXGroup;
 			children = (
 				C3B1DDB7272C4AAD00E12C57 /* MainViewController.swift */,
+				C3B1DDFA272D537E00E12C57 /* FeedController.swift */,
+				C3B1DDFC272D539100E12C57 /* SearchController.swift */,
+				C3B1DDFE272D53AC00E12C57 /* ImageSelectorController.swift */,
+				C3B1DE00272D53C800E12C57 /* NotificationController.swift */,
+				C3B1DE02272D53E400E12C57 /* ProfileController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -308,9 +323,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3B1DDFF272D53AC00E12C57 /* ImageSelectorController.swift in Sources */,
 				C3B1DD81272C48DA00E12C57 /* ViewController.swift in Sources */,
+				C3B1DDFB272D537E00E12C57 /* FeedController.swift in Sources */,
 				C3B1DD7D272C48DA00E12C57 /* AppDelegate.swift in Sources */,
+				C3B1DDFD272D539100E12C57 /* SearchController.swift in Sources */,
+				C3B1DE03272D53E400E12C57 /* ProfileController.swift in Sources */,
 				C3B1DD87272C48DA00E12C57 /* instagram_clone.xcdatamodeld in Sources */,
+				C3B1DE01272D53C800E12C57 /* NotificationController.swift in Sources */,
 				C3B1DD7F272C48DA00E12C57 /* SceneDelegate.swift in Sources */,
 				C3B1DDB8272C4AAD00E12C57 /* MainViewController.swift in Sources */,
 			);

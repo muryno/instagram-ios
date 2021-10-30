@@ -16,10 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       
         
-        
-        let windowScene = UIWindow(frame: UIScreen.main.bounds)
-        windowScene.rootViewController = MainViewController()
-        windowScene.makeKeyAndVisible()
+//        
+//        let windowScene = UIWindow(frame: UIScreen.main.bounds)
+//        windowScene.rootViewController = MainViewController()
+//        windowScene.makeKeyAndVisible()
      
         
         return true
