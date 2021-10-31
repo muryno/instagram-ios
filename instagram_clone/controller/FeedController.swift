@@ -7,24 +7,23 @@
 
 import UIKit
 
-class FeedController: UIViewController {
+class FeedController: UICollectionViewController {
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configurationChange()
 
+        
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
+ 
+    // MARK: - Helper
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configurationChange(){
+        self.collectionView.backgroundColor = .systemBlue
     }
-    */
 
 }

@@ -14,13 +14,20 @@ class MainViewController: UITabBarController{
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
+
     }
 
     // MARK: - Helper
     
     func configureViewController(){
-        self.view.backgroundColor = .white
-        let feed =   templateNavigationController (unselectedImage: #imageLiteral(resourceName: "home_unselected"),selectedImage: #imageLiteral(resourceName: "home_selected"), viewController: FeedController())
+        self.view.backgroundColor = .systemGray6
+
+        if #available(iOS 15.0, *) {
+           tabBar.scrollEdgeAppearance = tabBar.standardAppearance
+        }
+        
+        let uiCollectionViewLayout = UICollectionViewFlowLayout()
+        let feed =   templateNavigationController (unselectedImage: #imageLiteral(resourceName: "home_unselected"),selectedImage: #imageLiteral(resourceName: "home_selected"), viewController: FeedController(collectionViewLayout:  uiCollectionViewLayout))
         feed.title = "Feeds"
    
         let search =   templateNavigationController (unselectedImage: #imageLiteral(resourceName: "search_unselected"),selectedImage: #imageLiteral(resourceName: "search_selected"), viewController: SearchController())
@@ -42,6 +49,10 @@ class MainViewController: UITabBarController{
     
     func templateNavigationController(unselectedImage : UIImage, selectedImage : UIImage, viewController : UIViewController)->UINavigationController {
         let nav = UINavigationController(rootViewController: viewController)
+        
+        if #available(iOS 15.0, *) {
+            nav.navigationBar.scrollEdgeAppearance = nav.navigationBar.standardAppearance
+        }
         nav.tabBarItem.image = unselectedImage
         nav.tabBarItem.selectedImage = selectedImage
         nav.navigationBar.tintColor = .black
