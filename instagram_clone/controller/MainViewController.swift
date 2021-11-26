@@ -47,20 +47,17 @@ class MainViewController: UITabBarController{
         
     }
     
+    
+    // MARK: - Template
     func templateNavigationController(unselectedImage : UIImage, selectedImage : UIImage, viewController : UIViewController)->UINavigationController {
         let nav = UINavigationController(rootViewController: viewController)
-        
         if #available(iOS 15.0, *) {
             nav.navigationBar.scrollEdgeAppearance = nav.navigationBar.standardAppearance
         }
         nav.tabBarItem.image = unselectedImage
         nav.tabBarItem.selectedImage = selectedImage
         nav.navigationBar.tintColor = .black
-        
         return nav
-    
-    
-        
 }
 
 }
