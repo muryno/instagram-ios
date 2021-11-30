@@ -10,6 +10,18 @@ import Foundation
 import UIKit
 import JGProgressHUD
 
+
+
+extension UIButton{
+    func customButtonAppearance(placeHolder :String){
+        setTitle(placeHolder, for: .normal)
+        setTitleColor(.white, for: .normal)
+        backgroundColor = #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1).withAlphaComponent(0.5)
+        layer.cornerRadius = 5
+        setHeight(50)
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+    }
+}
 extension UIViewController {
     static let hud = JGProgressHUD(style: .dark)
     
@@ -37,6 +49,7 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+
 
 extension UIButton {
     func attributedTitle(firstPart: String, secondPart: String) {

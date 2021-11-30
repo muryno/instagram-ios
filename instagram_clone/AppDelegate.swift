@@ -7,7 +7,7 @@
 
 import UIKit
 import CoreData
-
+import Firebase
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        windowScene.rootViewController = MainViewController()
 //        windowScene.makeKeyAndVisible()
      
-        
+        FirebaseApp.configure()
         return true
     }
 

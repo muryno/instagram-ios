@@ -9,35 +9,116 @@ import UIKit
 
 class LoginController: UIViewController {
 
+    //MARK: - properties
+    
+     var loginViewModel = LoginViewModel()
+    
+    let instagramLogo : UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.image = #imageLiteral(resourceName: "Instagram_logo_white")
+        return iv
+    }()
+    
+    let emailTextField : UITextField = {
+        let tf = CustomTextField(placeHolder: "Email")
+        tf.keyboardType = .emailAddress
+        
+       return tf
+    }()
+    
+    let passwordTextField : UITextField = {
+        let tf = CustomTextField(placeHolder: "Password")
+        tf.isSecureTextEntry = true
+       return tf
+    }()
+    
+    let loginButton : UIButton = {
+        let ib = UIButton(type: .system)
+        ib.customButtonAppearance(placeHolder: "Login")
+        ib.isEnabled = false
+        return ib
+    }()
+    
+    let forgotPassword : UIButton = {
+        let ib = UIButton(type: .system)
+        ib.attributedTitle(firstPart: "Forgot your password? ", secondPart:  "Get help signing in.")
+        return ib
+    }()
+    
+    let dontHaveAnAccount : UIButton = {
+        let ib = UIButton(type: .system)
+        ib.attributedTitle(firstPart: "Don't have an account?  ", secondPart:  "SignUp")
+        ib.addTarget(self, action: #selector(navigateToSignUp), for: .touchUpInside)
+        return ib
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         configured()
+        
+        view.addSubview(instagramLogo)
+        instagramLogo.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 40)
+        instagramLogo.centerX(inView: view)
+        instagramLogo.setDimensions(height: 80, width: 130)
+        
+        let stackView = UIStackView(arrangedSubviews: [emailTextField,passwordTextField, loginButton,forgotPassword])
+        stackView.axis = .vertical
+        stackView.spacing = 20
+        
+        view.addSubview(stackView)
+        stackView.anchor(top: instagramLogo.bottomAnchor,left: view.leftAnchor,right: view.rightAnchor, paddingTop: 40,paddingLeft: 20,paddingRight: 20)
+        stackView.centerX(inView: view)
+        
+        
+        view.addSubview(dontHaveAnAccount)
+        dontHaveAnAccount.anchor( bottom: view.safeAreaLayoutGuide.bottomAnchor,  paddingBottom: 20 )
+        dontHaveAnAccount.centerX(inView: view)
     }
+    
+    
     
 
   private func configured(){
-    
       view.backgroundColor = .white
       navigationController?.navigationBar.isHidden = true
-      
-      let gradient = CAGradientLayer()
-      gradient.colors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
-      gradient.locations = [0,1]
-      view.layer.addSublayer(gradient)
-      gradient.frame = view.frame
-      
+      //change the bar color
+      navigationController?.navigationBar.barStyle = .black
+
+      self.configureGradientLayer()
+      onTextChange()
   }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func onTextChange(){
+        emailTextField.addTarget(self, action: #selector(textFieldValidator), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textFieldValidator), for: .editingChanged)
     }
-    */
 
+    
+   
+    // MARK: - action
+
+   
+
+    @objc func navigateToSignUp(){
+        let registrationController = RegistrationController()
+        navigationController?.pushViewController(registrationController, animated: true)
+    }
+    
+    @objc func textFieldValidator(senderTextField : UITextField){
+        if senderTextField === emailTextField {
+            loginViewModel.emailText = senderTextField.text
+        }
+        else{
+            loginViewModel.passwordText = senderTextField.text
+        }
+        
+        loginButton.isEnabled = loginViewModel.isFormValid
+        loginButton.backgroundColor = loginViewModel.buttonBackgroundColor
+        loginButton.setTitleColor(loginViewModel.buttonTextColor, for: .normal)
+
+    }
 }
