@@ -126,6 +126,7 @@ class RegistrationController: UIViewController , UIImagePickerControllerDelegate
         guard let fullName = fullNameTextField.text else { return }
        guard let profileImage = uiImage else { return }
         
+        
         showLoader(true)
               let registationData =   RegistrationModel(email: email, password: password, fullname: fullName, urlIImage: profileImage)
         AuthService.Register(registration: registationData){
@@ -140,7 +141,7 @@ class RegistrationController: UIViewController , UIImagePickerControllerDelegate
             
             print("Successfully added to firestore")
             self.showLoader(false)
-            self.showMessage(withTitle: "Success", message: "Added Succesfully!!")
+            self.dismiss(animated: true, completion: nil)
         }
     }
     

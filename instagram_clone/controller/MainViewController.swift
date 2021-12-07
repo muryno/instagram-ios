@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainViewController: UITabBarController{
 
@@ -13,9 +14,12 @@ class MainViewController: UITabBarController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkLoginStatuss()
         configureViewController()
-
+     
     }
+
+    
 
     // MARK: - Helper
     
@@ -46,6 +50,21 @@ class MainViewController: UITabBarController{
         self.tabBar.tintColor = .black
         
     }
+    
+    
+    //MARK: - action
+    private func checkLoginStatuss(){
+        
+        if Auth.auth().currentUser == nil{
+            DispatchQueue.main.async {
+                let nav = UINavigationController(rootViewController: LoginController())
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true, completion: nil)
+            }
+        }
+    }
+    
+
     
     
     // MARK: - Template
