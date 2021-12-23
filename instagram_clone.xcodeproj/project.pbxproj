@@ -34,6 +34,7 @@
 		C3B1DDFF272D53AC00E12C57 /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B1DDFE272D53AC00E12C57 /* ImageSelectorController.swift */; };
 		C3B1DE01272D53C800E12C57 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B1DE00272D53C800E12C57 /* NotificationController.swift */; };
 		C3B1DE03272D53E400E12C57 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B1DE02272D53E400E12C57 /* ProfileController.swift */; };
+		C3FB99E7275F6BCA000DEE5B /* LoginRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FB99E6275F6BCA000DEE5B /* LoginRespone.swift */; };
 		D9EDB3E6A26E5E718D97D1B8 /* Pods_instagram_clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027BF4C81A1B96C4775281FD /* Pods_instagram_clone.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,7 @@
 		C3B1DDFE272D53AC00E12C57 /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
 		C3B1DE00272D53C800E12C57 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		C3B1DE02272D53E400E12C57 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		C3FB99E6275F6BCA000DEE5B /* LoginRespone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRespone.swift; sourceTree = "<group>"; };
 		CC87E770DF9429DB959C4301 /* Pods_instagram_cloneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instagram_cloneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				C31E23C4275438B000EAF4B9 /* RegistrationModel.swift */,
+				C3FB99E6275F6BCA000DEE5B /* LoginRespone.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				C3B1DDFD272D539100E12C57 /* SearchController.swift in Sources */,
 				C3B1DE03272D53E400E12C57 /* ProfileController.swift in Sources */,
 				C3B1DD87272C48DA00E12C57 /* instagram_clone.xcdatamodeld in Sources */,
+				C3FB99E7275F6BCA000DEE5B /* LoginRespone.swift in Sources */,
 				C3B1DE01272D53C800E12C57 /* NotificationController.swift in Sources */,
 				C3B1DD7F272C48DA00E12C57 /* SceneDelegate.swift in Sources */,
 				C3B1DDB8272C4AAD00E12C57 /* MainViewController.swift in Sources */,

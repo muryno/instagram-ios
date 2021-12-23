@@ -36,6 +36,7 @@ class LoginController: UIViewController {
     let loginButton : UIButton = {
         let ib = UIButton(type: .system)
         ib.customButtonAppearance(placeHolder: "Login")
+        ib.addTarget(self, action: #selector(login), for: .touchUpInside)
         ib.isEnabled = false
         return ib
     }()
@@ -120,5 +121,29 @@ class LoginController: UIViewController {
         loginButton.backgroundColor = loginViewModel.buttonBackgroundColor
         loginButton.setTitleColor(loginViewModel.buttonTextColor, for: .normal)
 
+    }
+    
+    @objc func login(){
+        
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+
+        
+    
+        showLoader(true)
+        AuthService.Login(email: email, password: password) { user, error in
+            if let isError =  error  {
+                self.showMessage(withTitle: "Error", message: isError.localizedDescription)
+                print("Error occur due to :\(isError)")
+                self.showLoader(false)
+                return
+            }
+        
+            
+            print("Successfully sign in")
+            self.showLoader(false)
+            self.dismiss(animated: true, completion: nil)
+        }
+        
     }
 }

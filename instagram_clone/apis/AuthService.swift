@@ -55,4 +55,32 @@ class AuthService {
             }
         }
     }
+    
+    static func Login(email: String,password: String, completion : @escaping(String?, Error?)-> Void){
+        
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            
+            if let err = error{
+                completion(nil,err)
+                return
+            }
+            
+            if let uuId = result?.user.uid {
+                completion(uuId, nil)
+            }else{
+                completion(nil, nil)
+            }
+//            let decoder = JSONDecoder()
+//            do{
+//                let result = try! decoder.decode(LoginResponse.self, from: result!  as! Data)
+//                completion(result.data,nil)
+//            }catch{
+//                completion(nil, nil)
+//            }
+            
+    
+     
+        }
+        
+    }
 }

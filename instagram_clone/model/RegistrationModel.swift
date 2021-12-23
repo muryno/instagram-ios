@@ -14,3 +14,7 @@ struct RegistrationModel{
     var fullname : String
     var urlIImage : UIImage
 }
+
+
+
+
